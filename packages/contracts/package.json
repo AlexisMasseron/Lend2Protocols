@@ -1,0 +1,27 @@
+{
+  "name": "contracts",
+  "private": true,
+  "version": "1.22.10",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@openzeppelin/contracts": "^3.3.0"
+  },
+  "scripts": {
+    "compile": "truffle compile",
+    "test": "truffle test",
+    "deploy:dev": "truffle deploy --network development --reset",
+    "deploy:ropsten": "truffle deploy --network ropsten --reset",
+    "deploy:kovan": "truffle deploy --network kovan --reset",
+    "console:dev": "truffle console --network development",
+    "console:ropsten": "truffle console --network ropsten",
+    "ganache:start": "ganache-cli -p 7545"
+  },
+  "devDependencies": {
+    "@truffle/hdwallet-provider": "^1.0.35",
+    "dotenv": "^8.2.0",
+    "ethers": "^5.0.26",
+    "ganache-cli": "^6.9.1",
+    "truffle": "^5.1.22"
+  }
+}

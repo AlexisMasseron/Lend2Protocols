@@ -1,0 +1,363 @@
+{
+	"compiler": {
+		"version": "0.7.4+commit.3f05b770"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "borrower",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "delegator",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "Borrow",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "delegator",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "Delegate",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "borrower",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "delegator",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "Repay",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "delegator",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "Withdraw",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "protocolAddress",
+						"type": "address"
+					}
+				],
+				"name": "allow",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "delegatorsAddrs",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "amounts",
+						"type": "uint256[]"
+					}
+				],
+				"name": "borrow",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "delegate",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "delegators",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "exists",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "delegated",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "loaned",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "delegator",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "delegatee",
+						"type": "address"
+					}
+				],
+				"name": "getAllowance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getDelegations",
+				"outputs": [
+					{
+						"internalType": "address[64]",
+						"name": "",
+						"type": "address[64]"
+					},
+					{
+						"internalType": "uint256[64]",
+						"name": "",
+						"type": "uint256[64]"
+					},
+					{
+						"internalType": "uint256[64]",
+						"name": "",
+						"type": "uint256[64]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "delegatorsAddrs",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "amounts",
+						"type": "uint256[]"
+					}
+				],
+				"name": "repay",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "delegatorsAddrs",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint16[]",
+						"name": "amounts",
+						"type": "uint16[]"
+					}
+				],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Interface for the Liquidity to Protocol Credit Delegation Pool",
+			"kind": "dev",
+			"methods": {
+				"allow(address)": {
+					"details": "allow an address so that it can borrow from the pool*"
+				},
+				"borrow(address[],uint256[])": {
+					"details": "Uses the pool credit delegation to borrow dai for a whitelisted borrower mints debt tokens for the user the token's rate is aave's stable rate + the pools rate (TBD) borrower has to be whitelisted*"
+				},
+				"delegate(uint256)": {
+					"details": "Deposits an amount of dai to aave and delegates all its borrowing power to the pool*"
+				},
+				"getDelegations()": {
+					"details": "This function returns the current debt situation of the pool's delegators This data is used to compute the addresses and amounts to use when interacting with the pool TBD: try to optimize array size (find a way to deal with unsized array?) *"
+				},
+				"repay(address[],uint256[])": {
+					"details": "Borrowers burns a part of their debt by sending a corresponding amount of dai borrower has to be whitelisted*"
+				},
+				"withdraw(address[],uint16[])": {
+					"details": "Nullifies the pool credit delegation, burns the users adai and returns dai*"
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"localhost/contracts/contracts/L2PPool.sol": "L2PPool"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"localhost/contracts/contracts/L2PPool.sol": {
+			"keccak256": "0x6ae5bbaa4884bcd21a553fcb45da065fb429e1df1c30cc433546d4c12b115452",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ce290cff62562d94bde4b0a3be8f3c10a264eea315a012b5d50a96ba56d1c8a2",
+				"dweb:/ipfs/QmNdM4LdK9h94Q1GaY1oh9EJDw62XirPgiVuRfG7qkzURQ"
+			]
+		},
+		"localhost/contracts/interfaces/IERC20.sol": {
+			"keccak256": "0xd4aad545e8515e41f48db1bc5c07676e05f0d0daddebcb88ff92cc99b919de2a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://339906b403ae707b3196e5185af122198df00ee24d75661e62794a892a0b5492",
+				"dweb:/ipfs/QmXNw4J5Krs5ADvTuWn9VT5B18LiqehkgievgS9f6oXVkP"
+			]
+		},
+		"localhost/contracts/interfaces/ILendingPool.sol": {
+			"keccak256": "0x0ac30583169f7dd4fbb3203cca6c99dd620bf2fd5287d6724e9edb9e1a94b17a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ec2cf7dedcd8f61dec594477d3624659bf1f7e919c061b85f18120a18c10c63e",
+				"dweb:/ipfs/QmXAyD23N7XP9F6knsMmMRFqWKoWbF4upzh7RPxiucUunf"
+			]
+		},
+		"localhost/contracts/interfaces/ILendingPoolAddressesProvider.sol": {
+			"keccak256": "0x80b761c1703b7562f5c8214fb9ff792de285488cdc3e81f74656bf96abe962cb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://165730e1dcf2cd95091ec546f4d7d5e966ceddef5e86e6d6c5f1e0f3d663b6fd",
+				"dweb:/ipfs/QmZJBdsRE1BgVzZ4e4WAbathKYQQELioTrkoKptCbz54es"
+			]
+		},
+		"localhost/contracts/interfaces/IProtocolDataProvider.sol": {
+			"keccak256": "0xadbe859d51e54dd94e01834405024e13b783d0476f54e8828d2274df1141943a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b6a3ebef4df6d4957b1f972d6587d58f4cfa8aa4ac60bb29ccd89c64171df1cf",
+				"dweb:/ipfs/QmUbWhwFJXZqkm38R3UQVPWs93MGrJd6cgKDytqSqmfA3e"
+			]
+		},
+		"localhost/contracts/interfaces/IStableDebtToken.sol": {
+			"keccak256": "0x5539928d0d36d13c8489fae392056cfad863894b9a1a051ecac5620c7b24d543",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://69d98b49810b214059a64a3e99c8bc722c12277b61b3d89c2e7bf4f6c86ae4fb",
+				"dweb:/ipfs/QmRwy9A1E1Pa2LtBstyUiPqhSMVduMmLfE2tXzpvLxgesW"
+			]
+		},
+		"localhost/contracts/lib/Libraries.sol": {
+			"keccak256": "0x76126129327b823e5a42a65a92a8a04189dffa1a51a979b6e9d031d5cb65b0cc",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7dae0c0a3ad130f8f03a36e1a98af93037b7f904651d27afb78d20a1602fe651",
+				"dweb:/ipfs/QmaA9JicvwtbYYPSxwaWrjc3WJzCqHBRhQxyGJSXscS9ah"
+			]
+		}
+	},
+	"version": 1
+}

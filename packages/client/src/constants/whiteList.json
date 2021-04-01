@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Aave",
+    "default": true
+  },
+  {
+    "name": "dYdX",
+    "default": true
+  },
+  {
+    "name": "Compound",
+    "default": false
+  },
+  {
+    "name": "Balancer",
+    "default": false
+  },
+  {
+    "name": "Curve",
+    "default": false
+  }
+]

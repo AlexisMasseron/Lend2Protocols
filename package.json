@@ -1,0 +1,40 @@
+{
+    "name": "market-make-hack-app",
+    "private": true,
+    "workspaces": [
+        "packages/*"
+    ],
+    "scripts": {
+        "client": "yarn workspace client",
+        "client:start": "yarn workspace client start",
+        "client:test": "yarn workspace client test",
+        "client:build": "yarn workspace client build",
+        "client:add": "yarn workspace client add",
+        "client:precommit": "yarn workspace client precommit",
+        "server": "yarn workspace server",
+        "server:start": "yarn workspace server start:dev",
+        "server:test": "yarn workspace server test",
+        "server:build": "yarn workspace server build",
+        "server:add": "yarn workspace server add",
+        "server:precommit": "yarn workspace server precommit",
+        "all:precommit": "npm-run-all client:precommit server:precommit",
+        "contracts": "yarn workspace contracts",
+        "contracts:compile": "yarn workspace contracts compile",
+        "contracts:test": "yarn workspace contracts test",
+        "contracts:deploy:dev": "yarn workspace contracts deploy:dev",
+        "contracts:deploy:ropsten": "yarn workspace contracts deploy:ropsten",
+        "contracts:console:dev": "yarn workspace contracts console:dev",
+        "contracts:console:ropsten": "yarn workspace contracts console:opsten",
+        "contracts:add": "yarn workspace contracts add",
+        "ganache:start": "yarn workspace contracts ganache:start"
+    },
+    "devDependencies": {
+        "husky": "^4.3.8",
+        "npm-run-all": "^4.1.5"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "yarn all:precommit"
+        }
+    }
+}
