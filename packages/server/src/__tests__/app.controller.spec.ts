@@ -40,10 +40,12 @@ describe("AppController", () => {
 
   describe("ALLOW a borrower to get funds from the platform", () => {
     it("should call allow with the address", async () => {
-      // Act
+      // Arrange
       const allowSpy = jest
         .spyOn(appServiceMockInstance, "allow")
         .mockResolvedValue();
+
+      // Act
       await appController.allow(testAddress);
 
       // Assert

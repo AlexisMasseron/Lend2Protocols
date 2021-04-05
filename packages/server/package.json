@@ -71,7 +71,10 @@
       "**/*.(t|j)s"
     ],
     "coverageDirectory": "../coverage",
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "setupFiles": [
+      "<rootDir>/__tests__/jest/setEnvVars.ts"
+    ]
   },
   "lint-staged": {
     "*.{ts,tsx,js,css,md}": "prettier --write"
